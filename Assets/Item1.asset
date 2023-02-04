@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 693d32fe5325bb14aa20d8cd46165fea, type: 3}
+  m_Name: Item1
+  m_EditorClassIdentifier: 
+  itemName: Capsule
+  description: Commit instant suicide
+  model: {fileID: 2651429845874260841, guid: c31abc8788399094bb9c6caab70d2ecc, type: 3}
+  icon: {fileID: -9095717837082945937, guid: aae6f53683ae8a645aaa3c48f43f4ac7, type: 3}
+  canCombine: 1
+  canDiscard: 1
