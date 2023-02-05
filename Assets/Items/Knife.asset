@@ -17,3 +17,4 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 24b6913b930da304e83a0ca659159e78, type: 3}
   stackable: 0
   fusionable: 0
+  unique: 1

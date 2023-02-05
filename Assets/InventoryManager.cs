@@ -12,7 +12,7 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < inventorySlots.Length; i++)
         {
             InventorySlot slot = inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();            
             if (itemInSlot == null && slot.taken == false)
             {
                 SpawnItem(item,slot);
@@ -20,7 +20,22 @@ public class InventoryManager : MonoBehaviour
                 return;
             }                
         }
-    }    
+    }
+
+    public bool HasItem(Item item){
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            InventorySlot slot = inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();            
+            if (itemInSlot == null )
+            {
+                return false;
+            }else if (itemInSlot.name == item.name){
+                return true;
+            }           
+        }
+        return false;
+    }
 
     public void SpawnItem(Item item, InventorySlot slot)
     {

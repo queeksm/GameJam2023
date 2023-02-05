@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {  [SerializeField]
-    private Canvas puzzle;
-    public int delta = 1;
-    private bool withinPuzzleRange = false;
+    private Canvas puzzle;    
+    public int delta = 1;    
     private Vector3 right =  new Vector3(1,0,0) ;
     private Vector3 up =  new Vector3(0,1,0);
     public GameObject player;
@@ -17,41 +16,64 @@ public class PlayerManager : MonoBehaviour
     }     
     
     private void OnTriggerEnter2D(Collider2D other) {
-        withinPuzzleRange = true; 
+        if(other.name == "Mama"){
+            Item knife =  GameObject.Find("AllObjects").GetComponent<ObjectList>().items[0];
+            InventoryManager inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+            delta = 0;
+            puzzle.GetComponent<Canvas>().enabled = true;
+            if (!inventoryManager.HasItem(knife))
+                inventoryManager.AddItem(knife);
+                other.GetComponent<CircleCollider2D>().radius = 0;
+        }
+        switch (other.name)
+        {
+            case "Mama":
+                Item knife =  GameObject.Find("AllObjects").GetComponent<ObjectList>().items[0];
+                InventoryManager inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+                delta = 0;
+                puzzle.GetComponent<Canvas>().enabled = true;
+                Destroy(GameObject.Find("Invis_Wall"));
+                if (!inventoryManager.HasItem(knife))
+                    inventoryManager.AddItem(knife);
+                    other.GetComponent<CircleCollider2D>().radius = 0;
+                break;
+            default:
+                break;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        withinPuzzleRange =  false;        
+                
     }
     
 
     private void Update() {
+        
+
+        
         switch (Input.inputString)
         {
             case "w":
                 player.transform.position += up * delta;
+                            
                 break;
             case "s":
                 player.transform.position -= up * delta;
+                 
                 break;
             case "a":
                 player.transform.position -= right  * delta;
+                 
                 break;
             case "d":
                 player.transform.position += right * delta;
+                 
                 break;
-            case "m":
-                if (withinPuzzleRange){
-                    delta = 0;
-                    puzzle.GetComponent<Canvas>().enabled = true;
-                }
-
-                
+            case "e":
+                delta = 1;            
+                puzzle.GetComponent<Canvas>().enabled = !puzzle.GetComponent<Canvas>().enabled;
                 break;
-            case "n":
-                delta = 1;
-                puzzle.GetComponent<Canvas>().enabled = false;
-                break;
+            
             default:
                 break;            
         }

@@ -5,8 +5,7 @@ using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
-    // Start is called before the first frame update
-    public bool taken = false;
+    [HideInInspector] public bool taken = false;
     public void OnDrop(PointerEventData eventData)
     {
         if(transform.childCount == 0)

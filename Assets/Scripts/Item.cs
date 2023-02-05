@@ -10,5 +10,6 @@ public class Item : ScriptableObject
    public TileBase tile;
    public Sprite image;
    public bool stackable;
-   public bool fusionable;  
+   public bool fusionable;
+   public bool unique;
 }
