@@ -6,9 +6,6 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {  [SerializeField]
     private Canvas puzzle;
-
-    [SerializeField]
-    private Inventory inventory;
     public int delta = 1;
     private bool withinPuzzleRange = false;
     private Vector3 right =  new Vector3(1,0,0) ;
@@ -20,13 +17,7 @@ public class PlayerManager : MonoBehaviour
     }     
     
     private void OnTriggerEnter2D(Collider2D other) {
-        withinPuzzleRange = true;
-        
-        if (other.tag == "Collectable")
-        {
-            inventory.AddItem(other.GetComponentInParent<CollectableItem>());
-                        
-        }             
+        withinPuzzleRange = true; 
     }
 
     private void OnTriggerExit2D(Collider2D other) {
