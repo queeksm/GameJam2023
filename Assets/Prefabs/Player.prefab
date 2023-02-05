@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 4142904139609986316}
   - component: {fileID: 4142904139609986307}
   - component: {fileID: 4142904139609986304}
-  - component: {fileID: 4142904139609986305}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle: {fileID: 0}
-  inventory: {fileID: 4142904139609986305}
   delta: 1
   player: {fileID: 4142904139609986319}
 --- !u!61 &4142904139609986307
@@ -149,17 +147,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4142904139609986305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4142904139609986319}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 308704aeb25c8a745a28ca12c155d14f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items: []
-  maxSlots: 3
