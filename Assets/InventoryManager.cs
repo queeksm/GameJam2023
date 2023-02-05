@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
-    public GameObject inventoryItemPrefab;
+    public GameObject inventoryItemPrefab;    
     
     public void AddItem(Item item)
     {
@@ -13,18 +13,19 @@ public class InventoryManager : MonoBehaviour
         {
             InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot == null)
+            if (itemInSlot == null && slot.taken == false)
             {
                 SpawnItem(item,slot);
+                slot.taken = true;
                 return;
             }                
         }
-    }
+    }    
 
     public void SpawnItem(Item item, InventorySlot slot)
     {
         GameObject newItemGO = Instantiate(inventoryItemPrefab,slot.transform);
         InventoryItem inventoryItem = newItemGO.GetComponent<InventoryItem>();
-        inventoryItem.InitializeItem(item);
+        inventoryItem.InitializeItem(item);        
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dfbfb012d84a034681cae6defcf3c17, type: 3}
   m_Name: Sticks
   m_EditorClassIdentifier: 
+  name: Sticks
   tile: {fileID: 0}
   image: {fileID: 21300000, guid: 1674f3d1d5be1fc4dbad23095610e4d1, type: 3}
   stackable: 1

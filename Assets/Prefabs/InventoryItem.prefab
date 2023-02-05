@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 8327a463535cd9f4d92a760e49ac6b1b, type: 2}
+  testItem: {fileID: 11400000, guid: f4052930a2ebec243ad62fe243d91d16, type: 2}
+  inventoryManager: {fileID: 0}
   image: {fileID: 3069280427617213277}
-  reference: {fileID: 1483508291265758180, guid: c381eeffff9006845a856c5c602bf57e, type: 3}
+  name: 
   parentAfterDrag: {fileID: 0}
