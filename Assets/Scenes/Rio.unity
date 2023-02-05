@@ -415,7 +415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &469997745
 Transform:
   m_ObjectHideFlags: 0
@@ -1703,7 +1703,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 0}
+  inventoryManager: {fileID: 0}
   image: {fileID: 0}
+  name: 
   parentAfterDrag: {fileID: 0}
 --- !u!4 &1661592878
 Transform:
@@ -2321,7 +2323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2143202647
 Transform:
   m_ObjectHideFlags: 0
