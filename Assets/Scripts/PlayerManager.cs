@@ -16,20 +16,13 @@ public class PlayerManager : MonoBehaviour
     }     
     
     private void OnTriggerEnter2D(Collider2D other) {
-        if(other.name == "Mama"){
-            Item knife =  GameObject.Find("AllObjects").GetComponent<ObjectList>().items[0];
-            InventoryManager inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
-            delta = 0;
-            puzzle.GetComponent<Canvas>().enabled = true;
-            if (!inventoryManager.HasItem(knife))
-                inventoryManager.AddItem(knife);
-                other.GetComponent<CircleCollider2D>().radius = 0;
-        }
+        
+
+        Item knife =  GameObject.Find("AllObjects").GetComponent<ObjectList>().items[0];
+        InventoryManager inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
         switch (other.name)
         {
-            case "Mama":
-                Item knife =  GameObject.Find("AllObjects").GetComponent<ObjectList>().items[0];
-                InventoryManager inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+            case "Mama":               
                 delta = 0;
                 puzzle.GetComponent<Canvas>().enabled = true;
                 Destroy(GameObject.Find("Invis_Wall"));
@@ -37,6 +30,18 @@ public class PlayerManager : MonoBehaviour
                     inventoryManager.AddItem(knife);
                     other.GetComponent<CircleCollider2D>().radius = 0;
                 break;
+            case "Start":
+                delta = 0;
+                puzzle.GetComponent<Canvas>().enabled = true;                
+                if (!inventoryManager.HasItem(knife))
+                    inventoryManager.AddItem(knife);
+                    other.GetComponent<CircleCollider2D>().radius = 0;
+                break;
+            case "PnC Ramas":
+                delta = 0;
+                puzzle.GetComponent<Canvas>().enabled = true;                
+                break;
+
             default:
                 break;
         }
@@ -47,15 +52,16 @@ public class PlayerManager : MonoBehaviour
     }
     
 
-    private void Update() {
-        
+    
+
+    private void Update() {        
 
         
         switch (Input.inputString)
         {
             case "w":
                 player.transform.position += up * delta;
-                            
+                                
                 break;
             case "s":
                 player.transform.position -= up * delta;
@@ -67,7 +73,7 @@ public class PlayerManager : MonoBehaviour
                 break;
             case "d":
                 player.transform.position += right * delta;
-                 
+                
                 break;
             case "e":
                 delta = 1;            
